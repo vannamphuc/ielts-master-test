@@ -1,8 +1,10 @@
-import { MOCK_NOW, mockAssignments } from "../data/assignments";
-import { getAssignmentStatus } from "../lib/assignment-status";
+import {
+  MOCK_NOW,
+  MOCK_STUDENT_ID,
+  mockAssignments,
+} from "../data/assignments.ts";
+import { getAssignmentStatus } from "../lib/assignment-status.ts";
 import type { AssignmentWithStatus } from "../types/assignment";
-
-const MOCK_STUDENT_ID = "S01";
 
 export function getAssignmentsForCurrentStudent(): AssignmentWithStatus[] {
   return mockAssignments

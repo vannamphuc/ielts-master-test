@@ -5,6 +5,7 @@ export interface Assignment {
   deadline: string;
   submittedAt: string | null;
 }
+
 export type AssignmentStatus =
   | "PENDING"
   | "OVERDUE"

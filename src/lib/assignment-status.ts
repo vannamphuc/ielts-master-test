@@ -7,11 +7,8 @@ export function getAssignmentStatus(
   const deadline = new Date(assignment.deadline).getTime();
   const currentTime = new Date(now).getTime();
 
-  // Đã nộp
   if (assignment.submittedAt) {
-    const submittedTime = new Date(assignment.submittedAt).getTime();
-
-    const isLate = submittedTime > deadline;
+    const isLate = new Date(assignment.submittedAt).getTime() > deadline;
 
     return {
       status: isLate ? "SUBMITTED_LATE" : "SUBMITTED",
@@ -19,17 +16,11 @@ export function getAssignmentStatus(
     };
   }
 
-  // Chưa nộp và đã hết hạn
+  // quá hạn
   if (currentTime > deadline) {
-    return {
-      status: "OVERDUE",
-      isLate: false,
-    };
+    return { status: "OVERDUE", isLate: false };
   }
 
-  // Chưa nộp và vẫn còn hạn
-  return {
-    status: "PENDING",
-    isLate: false,
-  };
+  // Chưa nộp
+  return { status: "PENDING", isLate: false };
 }

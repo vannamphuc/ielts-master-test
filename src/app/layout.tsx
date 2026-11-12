@@ -1,31 +1,22 @@
 import type { Metadata } from "next";
-import {
-  Plus_Jakarta_Sans,
-  Anonymous_Pro,
-  Bricolage_Grotesque,
-} from "next/font/google";
+import { Plus_Jakarta_Sans, Bricolage_Grotesque } from "next/font/google";
 
 import "./globals.css";
+import { SiteHeader } from "@/components/site-header";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
+  subsets: ["latin", "vietnamese"],
   variable: "--font-plus-jakarta",
 });
 
-const anonymousPro = Anonymous_Pro({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-anonymous-pro",
-});
-
 const bricolageGrotesque = Bricolage_Grotesque({
-  subsets: ["latin"],
+  subsets: ["latin", "vietnamese"],
   variable: "--font-bricolage-grotesque",
 });
 
 export const metadata: Metadata = {
-  title: "My Application",
-  description: "My Next.js application",
+  title: "Bài tập của tôi | IELTS Master",
+  description: "Theo dõi bài tập IELTS Foundation của học viên S01.",
 };
 
 export default function RootLayout({
@@ -35,16 +26,13 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      className={`
-        ${plusJakartaSans.variable}
-        ${anonymousPro.variable}
-        ${bricolageGrotesque.variable}
-        h-full
-        antialiased
-        `}
+      lang="vi"
+      className={`${plusJakartaSans.variable} ${bricolageGrotesque.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <SiteHeader />
+        {children}
+      </body>
     </html>
   );
 }
