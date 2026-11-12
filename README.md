@@ -1,3 +1,5 @@
+# IELTS Master · Bài tập của tôi
+
 Ứng dụng Next.js hiển thị bài tập Foundation của học viên giả lập **S01**. Danh sách và trạng thái dùng dữ liệu mẫu cố định tại [`MOCK_NOW` (11/11/2026 09:00 GMT+7)](src/data/assignments.ts).
 
 ![Giao diện Bài tập của tôi](public/assignment-list.png)
