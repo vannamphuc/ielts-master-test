@@ -15,7 +15,7 @@ const bricolageGrotesque = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  title: "Bài tập của tôi | IELTS Master",
+  title: "IELTS Master",
   description: "Theo dõi bài tập IELTS Foundation của học viên S01.",
 };
 
